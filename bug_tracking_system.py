@@ -1,6 +1,6 @@
 import mysql.connector
 def get_db_connection():
-    return mysql.connector.connect(host = "localhost",user = "root",password="sql",database = "bds",charset="utf8")
+    return mysql.connector.connect(host = "localhost",user = "Your_username",password="Your_password",database = "bds",charset="utf8")
 def main_menu():
     print("*******MAIN MENU********")
     print("1.ADMIN MODULE")
