@@ -1,0 +1,92 @@
+******************************
+*********ADMIN MODULE*********
+******************************
+1. Manager
+	1. Add Manager Account
+	2. View Manger Account
+	3. Delete Manager
+	4. Update Manager Detail's
+2. Employee
+	1. Add Employee Account
+	2. View Employee's Account
+	3. Delete Employee Account
+	4. Update Employee Detail's
+3. View All Project
+4. View Bug's Reports
+5. Exit
+******************************
+*********MANAGER PANEL********
+******************************
+1. Update Profile
+2. Manage Project
+	1. Add Project
+	2. View All Projects
+	3. Delete Project
+	4. Update Project
+3. Bug's
+	1. Add New Bug
+	2. View All Bug’s
+	3. Update Bug
+	4. Delete Bug
+4. Exit
+******************************
+********EMPLOYEE PANEL********
+******************************
+1. Update Profile
+2. Add Bug's Report  		Hint : [only for tester]
+3. Update Bug status 
+4. View Bug's
+5. Bug Detail’s
+6. Exit
+
+********************************************************************************
+Use the following table for storage (Database Name : BDS (Bug tracking system))
+********************************************************************************
+Table Name : Employee
+
+empCode		int 		primary key	     Hint : [empCode use as a username for login]
+empName		varchar(30)
+empEmail	varchar(40)	
+empPassword	varchar(20)
+gender		varchar(10)
+DOB		varchar(20)
+mobileNo	bigint
+Role		varchar(20)			Hint : [manager,developer,Tester,Admin]
+
+
+Table Name : Project
+
+projectID	int		primary key
+projectName	varchar(30)
+SDate		varchar(30)
+EDate		varchar(30)
+projectDec	varchar(200)
+
+Table Name : BugReport
+
+bugNo		int		primary key
+bugCode		int		FK
+projectID	int		FK
+TCode		int		FK
+ECode		int		FK
+status		varchar(20)			Hint: [pending,resolved]
+bugDes		varchar(100)
+
+Table Name  : BugType
+
+bugCode		int		primary key
+bugCatgory	varchar(30)
+bugSeverty	varchar(20)			Hint : [Critical,Major,Medium,Low]
+
+
+Bug Code and there name :  
+1. Functional Errors.
+2. Compilation Errors.
+3. Missing commands.
+4. Run time Errors.
+5. Communication problems.
+6. Logical errors.
+7. Inappropriate error handling.
+8. Calculation issues.
+
+

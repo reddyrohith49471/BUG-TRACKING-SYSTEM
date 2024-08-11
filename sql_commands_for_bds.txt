@@ -1,0 +1,14 @@
+
+STEP 1:-CREATE DATABASE BDS;
+
+STEP 2:-USE BDS;
+
+STEP 3:-CREATE TABLE employee (empcode INT PRIMARY KEY,empname VARCHAR(30),empemail VARCHAR(40),emppassword VARCHAR(20),gender VARCHAR(10),dob VARCHAR(20),mobileno BIGINT,role VARCHAR(20));
+
+STEP 4:-CREATE TABLE project ( projectid INT PRIMARY KEY, projectname VARCHAR(30), sdate VARCHAR(30), edate VARCHAR(30), projectdec VARCHAR(200) );
+
+
+STEP 5:-CREATE TABLE bugreport ( bugno INT PRIMARY KEY, bugcode INT, projectid INT, tcode INT, ecode INT, status VARCHAR(20), bugdes VARCHAR(100), FOREIGN KEY (bugcode) REFERENCES bugType(bugcode), FOREIGN KEY (projectid) REFERENCES project(projectid), FOREIGN KEY (tcode) REFERENCES employee(empcode), FOREIGN KEY (ecode) REFERENCES employee(empcode) );
+
+
+STEP 6:-CREATE TABLE bugtype ( bugcode INT PRIMARY KEY, bugcategory VARCHAR(30), bugseverty VARCHAR(20) );
